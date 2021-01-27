@@ -13,7 +13,11 @@ class UserController extends AbstractController {
      */
     function createUserForm() {
         $user = new User();
-        $form = $this->createFormBuilder($user);
+        $form = $this->createFormBuilder($user)
+            ->add('name')
+            ->add('email')
+            ->getform();
+        return $this->render('form.html.twig', ['form' => $form->createView()]);
     }
 
 }
