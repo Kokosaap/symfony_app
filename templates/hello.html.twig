@@ -1,9 +1,4 @@
-<div>{{ title | upper }}</div>
-
-<ul>
-
-    {% for item in array %}
-        <li>{{ item }}</li>    
-    {% endfor %}
-
-</ul>
+<a href="{{ path('helloName', {'name':'Mickey'}) }}">Hello Mickey</a>
+<a href="{{ path('helloName', {'name':'Dingo'}) }}">Hello Dingo</a>
+<a href="{{ path('helloName', {'name':'Donald'}) }}">Hello Donald</a>
+<a href="{{ path('helloName', {'name':'Daisy'}) }}">Hello Daisy</a>

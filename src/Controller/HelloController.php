@@ -9,21 +9,16 @@ use Symfony\Component\HttpFoundation\Response;
 class HelloController extends AbstractController {
 
     /**
-     * @Route("hello/{param}")
+     * @Route("hello")
      */
-    function helloDefault($param){
-        // $title = "utilisateurs";
-        // $users = ["Jordan", "Axel", "Do", "Marielle", "Aurel", "Nono"];
-        // return $this->render("hello.html.twig", [
-        //     'title' => $title, 'array' => $users]);
-        return new Response('Hello' . $param);
-            
+    function hello(){
+        return $this->render('hello.html.twig');
     }
 
     /**
-     * @Route("hello/{param}", requirements={"param"="\d+"}, methods={"GET"})
+     * @Route("hello/{name}", name="helloName")
      */
-    function helloNumber($param){
-        return new Response('Hello : Number' . $param);
+    function helloWithName(string $name){
+        return $this->render('Hello '. $name);
     }
 }
